@@ -6,14 +6,16 @@ import { deleteContact } from 'redux/contactsSlice';
 const ContactList = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(getFilterContacts);
-  const handleDelete = () => dispatch(deleteContact());
   return (
     <ul>
       {contacts.map(contact => (
         <li className={style.li} key={contact.id}>
           <span className={style.spanName}>{contact.name}: </span>
           <span className={style.spanNumber}>{contact.number} </span>
-          <button className={style.btnDelete} onClick={handleDelete}>
+          <button
+            className={style.btnDelete}
+            onClick={() => dispatch(deleteContact(contact.id))}
+          >
             Delete
           </button>
         </li>

@@ -1,9 +1,9 @@
 export const getFilter = state => state.filter;
 
-export const getContacts = state => state.contacts;
+export const getContacts = state => state.contacts.data;
 
 export const getFilterContacts = state => {
-  const contacts = state.contacts;
+  const contacts = state.contacts.data;
   const filter = state.filter;
   const toLowerCaseFilter = filter.toLowerCase();
 

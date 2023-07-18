@@ -13,12 +13,12 @@ export const App = () => {
         <h2>Phonebook</h2>
         <ContactForm />
         <h2>Contacts</h2>
-        {contacts.length === 0 ? (
+        {contacts?.length === 0 ? (
           <p>Haven't got contacts. Please, add contact </p>
         ) : (
           <Filter />
         )}
-        {contacts.length > 0 && <ContactList />}
+        {contacts?.length > 0 && <ContactList />}
       </div>
     </>
   );
